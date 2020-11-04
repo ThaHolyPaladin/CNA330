@@ -1,6 +1,8 @@
 # This script pulls from a job website and stores positions into a database. If there is a new posting it notifies the user.
 # CNA 330
-# Zachary Rubin, zrubin@rtc.edu
+# Michael Horton, Mahorton@student.rtc.edu, 206-930-5206
+# With help from Zachary Rubin and Justin Ellis
+
 import mysql.connector
 import sys
 import json
@@ -19,7 +21,10 @@ def connect_to_sql():
 # Create the table structure
 def create_tables(cursor, table):
     ## Add your code here. Starter code below
-    cursor.execute('''CREATE TABLE IF NOT EXISTS tablename (id INT PRIMARY KEY); ''')
+    cursor.execute('''CREATE TABLE IF NOT EXISTS Jobs_found (id INT PRIMARY KEY auto_increment,
+                        Type varchar(10), Title varchar(100), Description TEXT, Job_id varchar(33),
+                        Created_at DATE, Company varchar(100), location varchar(50),
+                        How_to_apply varchar(1000)); ''')
     return
 
 # Query the database.
