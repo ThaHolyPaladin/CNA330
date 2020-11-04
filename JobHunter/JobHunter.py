@@ -22,7 +22,7 @@ def connect_to_sql():
 def create_tables(cursor, table):
     ## Add your code here. Starter code below
     cursor.execute('''CREATE TABLE IF NOT EXISTS Jobs_found (id INT PRIMARY KEY auto_increment,
-                        Type varchar(10), Title varchar(100), Description TEXT, Job_id varchar(33),
+                        Type varchar(10), Title varchar(100), Description TEXT, Job_id varchar(36),
                         Created_at DATE, Company varchar(100), location varchar(50),
                         How_to_apply varchar(1000)); ''')
     return
