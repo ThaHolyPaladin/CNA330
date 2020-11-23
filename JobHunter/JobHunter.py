@@ -108,6 +108,7 @@ def main():
     arg_dict = 0
     while (1):
         jobhunt(arg_dict, cursor)
+        conn.commit()
         time.sleep(3600)
         # Sleep for 1h
 
